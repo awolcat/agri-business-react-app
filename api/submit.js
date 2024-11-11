@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-dotenv.config();
+require('dotenv').config()
 const resend = new Resend(process.env.RESEND_KEY);
 
 export default async function handler(req, res) {
