@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "resend": "^4.0.1-alpha.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {

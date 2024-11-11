@@ -29,6 +29,7 @@ const EnquiryForm = ({products}) => {
         
         if (!response.ok) {
           const error = await response.json();
+          
           throw new Error(error.message || 'Submission failed');
         }
         setStatus('success');
