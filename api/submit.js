@@ -11,10 +11,10 @@ export default async function handler(req, res) {
 
   try {
     const { name, country, city, email, product, quantity, price, message } = req.body;
-    
+    //emilywairimu97@icloud.com
     await resend.emails.send({
       from: 'Test <emily@extrafreshfarm.com>',
-      to: ['emilywairimu97@icloud.com'],
+      to: ['albertirura11.com'],
       subject: `New Enquiry Form Submission from ${name}`,
       text: `
         Name: ${name}
