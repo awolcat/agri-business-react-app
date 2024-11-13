@@ -44,7 +44,6 @@ const EnquiryForm = ({products}) => {
           notes: '' });
       } catch (error) {
         setStatus('error');
-        console.error('Submission error:', error);
       }
     };
   
