@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     //emilywairimu97@icloud.com
     await resend.emails.send({
       from: 'Test <emily@extrafreshfarm.com>',
-      to: ['albertirura11.com'],
+      to: ['albertirura11@gmail.com'],
       subject: `New Enquiry Form Submission from ${name}`,
       text: `
         Name: ${name}
