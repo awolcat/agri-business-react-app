@@ -33,15 +33,16 @@ const EnquiryForm = ({products}) => {
           throw new Error(error.message || 'Submission failed');
         }
         setStatus('success');
-        setFormData({ 
-          country: '',
-          city: '',
-          product: '',
-          quantity: '',
-          price: '',
-          email: '',
-          name: '',
-          notes: '' });
+        // setFormData({ 
+        //   country: '',
+        //   city: '',
+        //   product: '',
+        //   quantity: '',
+        //   price: '',
+        //   email: '',
+        //   name: '',
+        //   notes: '' });
+        e.target.reset();
       } catch (error) {
         setStatus('error');
         console.error('Submission error:', error);
@@ -66,7 +67,7 @@ const EnquiryForm = ({products}) => {
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4 text-left">
         <div className='flex flex-row flex-wrap justify-between'>
           <div className='w-5/12'>
-            <label className="block text-sm font-medium mb-1">Name or Organization</label>
+            <label className="block text-sm font-medium mb-1">Name or Org</label>
             <input
               type="name"
               required
