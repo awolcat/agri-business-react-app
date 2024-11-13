@@ -11,8 +11,8 @@ export default async function handler(req, res) {
   try {
     const { name, country, city, email, product, quantity, price, message } = req.body;
     await resend.emails.send({
-      from: 'Test <emily@extrafreshfarm.com>',
-      to: ['albertirura11@gmail.com'],
+      from: 'ExtraFreshFarm <emily@extrafreshfarm.com>',
+      to: [process.env.BUSINESS_EMAIL, process.env.PERSONAL_EMAIL],
       reply_to: [email],
       subject: `New Enquiry Form Submission from ${name}`,
       text: `
