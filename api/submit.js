@@ -2,6 +2,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_KEY);
 
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: `Method not allowed. Received a ${req.method} instead of POST request` });
@@ -9,10 +10,10 @@ export default async function handler(req, res) {
 
   try {
     const { name, country, city, email, product, quantity, price, message } = req.body;
-    
     await resend.emails.send({
-      from: 'extrafreshfarm@resend.dev',
-      to: 'albertirura11@gmail.com',
+      from: 'ExtraFreshFarm <emily@extrafreshfarm.com>',
+      to: [process.env.BUSINESS_EMAIL, process.env.PERSONAL_EMAIL],
+      reply_to: [email],
       subject: `New Enquiry Form Submission from ${name}`,
       text: `
         Name: ${name}
@@ -25,9 +26,15 @@ export default async function handler(req, res) {
         Message: ${message}
       `,
     });
-
+    await resend.contacts.create({
+      email: email,
+      firstName: name,
+      unsubscribed: false,
+      audienceId: '2cd3c10b-72d4-4c57-96e7-9620e367f5c5',
+    });
     return res.status(200).json({ message: 'Email sent successfully' });
+
   } catch (error) {
-    return res.status(500).json({ message: 'Error sending email' });
+    return res.status(500).json({ message: error.message || 'An error occurred while sending the email' });
   }
 }

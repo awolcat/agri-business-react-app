@@ -59,14 +59,14 @@ const EnquiryForm = ({products}) => {
       
       {status === 'error' && (
         <div className="mb-4 bg-red-50 border-red-200">
-          <p>Failed to send message. Correct erring fields.</p>
+          <p>Something went wrong.</p>
         </div>
       )}
       
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4 text-left">
+      <form onSubmit={handleSubmit} id="enquiry-form" className="max-w-lg mx-auto space-y-4 text-left">
         <div className='flex flex-row flex-wrap justify-between'>
           <div className='w-5/12'>
-            <label className="block text-sm font-medium mb-1">Name or Organization</label>
+            <label className="block text-sm font-medium mb-1">Name or Org</label>
             <input
               type="name"
               required

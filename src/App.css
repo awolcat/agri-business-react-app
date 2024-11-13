@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+input, select, textarea {
+  background-color: white;
+}
+
 form input:focus {
   outline: 2px solid green;
 }
