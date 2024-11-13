@@ -42,7 +42,7 @@ const EnquiryForm = ({products}) => {
         //   email: '',
         //   name: '',
         //   notes: '' });
-        document.getElementById("enquiry-form").reset();
+        console.log(document.getElementById("enquiry-form").reset());
       } catch (error) {
         setStatus('error');
         console.error('Submission error:', error);
