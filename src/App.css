@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-form input {
+form input, * {
   background-color: white;
 }
 
