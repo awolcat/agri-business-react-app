@@ -33,16 +33,15 @@ const EnquiryForm = ({products}) => {
           throw new Error(error.message || 'Submission failed');
         }
         setStatus('success');
-        // setFormData({ 
-        //   country: '',
-        //   city: '',
-        //   product: '',
-        //   quantity: '',
-        //   price: '',
-        //   email: '',
-        //   name: '',
-        //   notes: '' });
-        console.log(document.getElementById("enquiry-form").reset());
+        setFormData({ 
+          country: '',
+          city: '',
+          product: '',
+          quantity: '',
+          price: '',
+          email: '',
+          name: '',
+          notes: '' });
       } catch (error) {
         setStatus('error');
         console.error('Submission error:', error);
