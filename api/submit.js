@@ -1,8 +1,20 @@
 import { Resend } from 'resend';
-// import dotenv from 'dotenv';
 
-// dotenv.config();
 const resend = new Resend(process.env.RESEND_KEY);
+
+const createContact = async (email, name) => {
+    
+  const response = await resend.contacts.create({
+    email: email,
+    firstName: name,
+    unsubscribed: false,
+    audienceId: '2cd3c10b-72d4-4c57-96e7-9620e367f5c5',
+  });
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || 'Error creating contact');
+  }
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -15,6 +27,7 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: 'Test <emily@extrafreshfarm.com>',
       to: ['albertirura11@gmail.com'],
+      reply_to: [email],
       subject: `New Enquiry Form Submission from ${name}`,
       text: `
         Name: ${name}
@@ -27,9 +40,10 @@ export default async function handler(req, res) {
         Message: ${message}
       `,
     });
-
+    createContact(email, name);
     return res.status(200).json({ message: 'Email sent successfully' });
+
   } catch (error) {
-    return res.status(500).json({ message: 'Error sending email' });
+    return res.status(500).json({ message: error.message || 'An error occurred while sending the email' });
   }
 }
