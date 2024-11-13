@@ -27,7 +27,6 @@ export default async function handler(req, res) {
   try {
     const { name, country, city, email, product, quantity, price, message } = req.body;
     //emilywairimu97@icloud.com
-    message = message || 'No message provided';
     await resend.emails.send({
       from: 'Test <emily@extrafreshfarm.com>',
       to: ['albertirura11@gmail.com'],
