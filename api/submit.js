@@ -43,7 +43,7 @@ export default async function handler(req, res) {
         Message: ${message}
       `,
     });
-    createContact(email, name);
+    await createContact(email, name);
     return res.status(200).json({ message: 'Email sent successfully' });
 
   } catch (error) {
