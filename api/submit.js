@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       unsubscribed: false,
       audienceId: '2cd3c10b-72d4-4c57-96e7-9620e367f5c5',
     });
-    console.log(response);
+    console.log("Create Contact ", response);
     if (!response.ok) {
       throw new Error(response || 'Error creating contact');
     }
@@ -24,7 +24,6 @@ export default async function handler(req, res) {
 
   try {
     const { name, country, city, email, product, quantity, price, message } = req.body;
-    //emilywairimu97@icloud.com
     await resend.emails.send({
       from: 'Test <emily@extrafreshfarm.com>',
       to: ['albertirura11@gmail.com'],
