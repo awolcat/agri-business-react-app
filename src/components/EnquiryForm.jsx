@@ -59,7 +59,7 @@ const EnquiryForm = ({products}) => {
       
       {status === 'error' && (
         <div className="mb-4 bg-red-50 border-red-200">
-          <p>Failed to send message. Correct erring fields.</p>
+          <p>Something went wrong.</p>
         </div>
       )}
       

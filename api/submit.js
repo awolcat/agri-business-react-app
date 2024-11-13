@@ -18,8 +18,7 @@ export default async function handler(req, res) {
     });
     console.log(response);
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || 'Error creating contact');
+      throw new Error(response || 'Error creating contact');
     }
   }
 
