@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-form > input, * {
+form > input, select, textarea {
   background-color: white;
 }
 
