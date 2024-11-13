@@ -42,7 +42,7 @@ const EnquiryForm = ({products}) => {
         //   email: '',
         //   name: '',
         //   notes: '' });
-        e.target.reset();
+        document.getElementById("enquiry-form").reset();
       } catch (error) {
         setStatus('error');
         console.error('Submission error:', error);
@@ -64,7 +64,7 @@ const EnquiryForm = ({products}) => {
         </div>
       )}
       
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4 text-left">
+      <form onSubmit={handleSubmit} id="enquiry-form" className="max-w-lg mx-auto space-y-4 text-left">
         <div className='flex flex-row flex-wrap justify-between'>
           <div className='w-5/12'>
             <label className="block text-sm font-medium mb-1">Name or Org</label>
