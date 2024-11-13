@@ -13,8 +13,8 @@ export default async function handler(req, res) {
     const { name, country, city, email, product, quantity, price, message } = req.body;
     
     await resend.emails.send({
-      from: 'emily@extrafreshfarm.com',
-      to: 'albertirura11@gmail.com',
+      from: 'Test <emily@extrafreshfarm.com>',
+      to: ['albertirura11@gmail.com'],
       subject: `New Enquiry Form Submission from ${name}`,
       text: `
         Name: ${name}
