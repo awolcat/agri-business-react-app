@@ -16,8 +16,7 @@ export default async function handler(req, res) {
       unsubscribed: false,
       audienceId: '2cd3c10b-72d4-4c57-96e7-9620e367f5c5',
     });
-    const res = await response.json();
-    console.log(res);
+    console.log(response);
     if (!response.ok) {
       const error = await response.json();
       throw new Error(error.message || 'Error creating contact');
