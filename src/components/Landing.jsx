@@ -124,7 +124,7 @@ const LandingPage = () => {
               {[
                 { icon: Mail, title: 'Email', content: 'extrafreshfarm01@gmail.com' },
                 { icon: Phone, title: 'Phone', content: '+61 (426) 442 026' },
-                { icon: MapPin, title: 'Address', content: 'Thika\nKenya' }
+                { icon: MapPin, title: 'Address', content: 'Thika, Kenya' }
               ].map((item, index) => (
                 <div 
                   key={item.title}
