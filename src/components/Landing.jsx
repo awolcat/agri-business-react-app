@@ -122,9 +122,9 @@ const LandingPage = () => {
           <div className="max-w-2xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { icon: Mail, title: 'Email', content: 'contact@example.com' },
-                { icon: Phone, title: 'Phone', content: '+1 (555) 123-4567' },
-                { icon: MapPin, title: 'Address', content: '123 Farm Road\nAgricultural District' }
+                { icon: Mail, title: 'Email', content: 'extrafreshfarm01@gmail.com' },
+                { icon: Phone, title: 'Phone', content: '+61 (426) 442 026' },
+                { icon: MapPin, title: 'Address', content: 'Thika\nKenya' }
               ].map((item, index) => (
                 <div 
                   key={item.title}
