@@ -44,7 +44,6 @@ const EnquiryForm = ({products}) => {
           notes: '' });
       } catch (error) {
         setStatus('error');
-        console.error('Submission error:', error);
       }
     };
   
@@ -127,7 +126,8 @@ const EnquiryForm = ({products}) => {
             <label className="block text-sm font-medium mb-1">Quantity</label>
             <input
               type="number"
-              min="0"
+              min="1"
+              max="1000"
               required
               className="w-full p-2 border rounded-md text-center"
               value={formData.quantity}
