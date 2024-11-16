@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Spinner } from '@/components/ui/spinner';
 
 const EnquiryForm = ({products}) => {
     const [formData, setFormData] = useState({
@@ -19,19 +20,20 @@ const EnquiryForm = ({products}) => {
       setStatus('submitting');
       try {
         // Send data to serverless function path
-        const response = await fetch('/api/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
+        // const response = await fetch('/api/submit', {
+        //   method: 'POST',
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        //   body: JSON.stringify(formData),
+        // });
         
-        if (!response.ok) {
-          const error = await response.json();
+        // if (!response.ok) {
+        //   const error = await response.json();
           
-          throw new Error(error.message || 'Submission failed');
-        }
+        //   throw new Error(error.message || 'Submission failed');
+        // }
+        await new Promise(r => setTimeout(r, 2000));
         setStatus('success');
         setFormData({ 
           country: '',
@@ -172,7 +174,7 @@ const EnquiryForm = ({products}) => {
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors"
-        >
+        > <Spinner show={status === 'submitting'} className="w-5 h-5 mr-2" />
           Submit Enquiry
         </button>
       </form>
