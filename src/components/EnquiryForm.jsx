@@ -173,11 +173,11 @@ const EnquiryForm = ({products}) => {
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors"
+          disabled={status === 'submitting'}
         >{status === 'submitting' ?
           <div id='loading'></div> :
-          <></>
+          <>Submit Enquiry</>
         }
-          Submit Enquiry
         </button>
       </form>
       </div>
