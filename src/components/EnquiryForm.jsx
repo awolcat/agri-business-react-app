@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Spinner } from '@/components/ui/spinner';
 
 const EnquiryForm = ({products}) => {
     const [formData, setFormData] = useState({
@@ -174,7 +173,10 @@ const EnquiryForm = ({products}) => {
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors"
-        > <Spinner show={status === 'submitting'} className="w-5 h-5 mr-2" />
+        >{status === 'submitting' ?
+          <div id='loading'></div> :
+          <></>
+        }
           Submit Enquiry
         </button>
       </form>
