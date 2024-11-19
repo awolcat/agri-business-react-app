@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Enhanced Product Card with hover effects
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, setModalOpen }) => {
   const [hoveredSection, setHoveredSection] = useState(null);
 
   const handleMouseEnter = (section) => {
@@ -48,12 +48,14 @@ const ProductCard = ({ product }) => {
         <div 
           className="flex-1 bg-blue-500 text-white text-center py-2 rounded cursor-pointer hover:bg-blue-600 transition duration-200"
           onMouseEnter={() => handleMouseEnter('varieties')}
+          onClick={() => setModalOpen(true)}
         >
           Varieties
         </div>
         <div 
           className="flex-1 bg-green-500 text-white text-center py-2 rounded cursor-pointer hover:bg-green-600 transition duration-200 ml-2"
           onMouseEnter={() => handleMouseEnter('packaging')}
+          onClick={() => setModalOpen(true)}
         >
           Packaging
         </div>

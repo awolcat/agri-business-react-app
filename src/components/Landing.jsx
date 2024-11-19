@@ -8,6 +8,7 @@ import avocadoImage from '../assets/avocadoes.jpeg';
 import avocadoOilImage from '../assets/avocadooil.jpeg';
 import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
+import ProductDetailModal from './ProductDetailModal';
 
 // Previous products array remains the same
 const products = [
@@ -35,6 +36,7 @@ const products = [
 const LandingPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,11 +96,16 @@ const LandingPage = () => {
       {/* Products */}
       <section id="products" className="py-16 bg-gray-50 animate-fade-in-up">
         <div className="container mx-auto px-4">
+          <ProductDetailModal 
+            isOpen={isModalOpen} 
+            onClose={() => setIsModalOpen(false)} 
+          />
           <h2 className="text-3xl font-bold mb-8 text-center">Our Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <div key={product.name} style={{ animationDelay: `${index * 200}ms` }}>
-                <ProductCard product={product} />
+                <ProductCard product={product}
+                             setModalOpen={() => setIsModalOpen(true)} />
               </div>
             ))}
           </div>
