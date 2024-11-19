@@ -35,7 +35,8 @@ const EnquiryForm = ({products}) => {
         //   throw new Error(error.message || 'Submission failed');
         // }
         await new Promise(r => setTimeout(r, 2000));
-        setStatus('error');
+        throw new Error(error.message || 'Submission failed');
+        setStatus('success');
         setFormData({ 
           country: '',
           city: '',
