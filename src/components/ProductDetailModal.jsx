@@ -28,14 +28,14 @@ const ProductDetailModal = ({ products, isOpen, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 top-0 h-full"
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6"
+        className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-scroll p-6"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between items-center mb-4">
+        <div className="grid justify-items-end mb-4">
           <button 
             onClick={onClose} 
             className="text-gray-600 hover:text-gray-900"

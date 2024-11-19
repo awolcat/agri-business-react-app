@@ -94,12 +94,14 @@ const LandingPage = () => {
       <AboutSection />
       
       {/* Products */}
-      <section id="products" className="py-16 bg-gray-50 animate-fade-in-up">
-        <div className="container mx-auto px-4">
-          <ProductDetailModal 
+      <ProductDetailModal
+            products={products} 
             isOpen={isModalOpen} 
             onClose={() => setIsModalOpen(false)} 
-          />
+      />
+      <section id="products" className="py-16 bg-gray-50 animate-fade-in-up">
+        <div className="container mx-auto px-4">
+          
           <h2 className="text-3xl font-bold mb-8 text-center">Our Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
@@ -109,9 +111,9 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
+          
         </div>
       </section>
-
       {/* Enquiry Form */}
       <section id="enquiry" className="py-16 bg-white">
         <div className="container mx-auto px-4">
