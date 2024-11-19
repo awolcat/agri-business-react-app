@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SuccessModal from './SuccessSubmitModal';
 
 const EnquiryForm = ({products}) => {
     const [formData, setFormData] = useState({
@@ -48,13 +49,13 @@ const EnquiryForm = ({products}) => {
       }
     };
   
-  
+  //<div className="mb-4 bg-green-50 border-green-200">
+  //<p>Message sent successfully!</p>
+  //</div>
     return (
       <div>
         {status === 'success' && (
-        <div className="mb-4 bg-green-50 border-green-200">
-          <p>Message sent successfully!</p>
-        </div>
+        <SuccessModal onClose={() => setStatus('idle')} />
       )}
       
       {status === 'error' && (
