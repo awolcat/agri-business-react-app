@@ -20,22 +20,21 @@ const EnquiryForm = ({products}) => {
       e.preventDefault();
       setStatus('submitting');
       try {
-        // Send data to serverless function path
-        // const response = await fetch('/api/submit', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify(formData),
-        // });
+        //Send data to serverless function path
+        const response = await fetch('/api/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
         
-        // if (!response.ok) {
-        //   const error = await response.json();
+        if (!response.ok) {
+          const error = await response.json();
           
-        //   throw new Error(error.message || 'Submission failed');
-        // }
-        await new Promise(r => setTimeout(r, 2000));
-        throw new Error(error.message || 'Submission failed');
+          throw new Error(error.message || 'Submission failed');
+        }
+        
         setStatus('success');
         setFormData({ 
           country: '',
