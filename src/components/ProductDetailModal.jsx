@@ -3,18 +3,19 @@ import { ChevronRight, ChevronLeft, X } from 'lucide-react';
 
 
 
-const ProductDetailModal = ({ products, isOpen, onClose }) => {
-  const [currentProductIndex, setCurrentProductIndex] = useState(0);
+const ProductDetailModal = ({ products, isOpen, onClose, index }) => {
+  const [currentProductIndex, setCurrentProductIndex] = useState(index);
   const product = products[currentProductIndex];
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setCurrentProductIndex(index);
       return () => {
         document.body.style.overflow = 'unset';
       };
     }
-  }, [isOpen]);
+  }, [isOpen, index]);
 
   const handleNextProduct = () => {
     setCurrentProductIndex((prev) => (prev + 1) % products.length);

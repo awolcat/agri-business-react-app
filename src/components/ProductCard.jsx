@@ -20,13 +20,13 @@ const ProductCard = ({ product, setModalOpen }) => {
       <div className="flex justify-between mb-4">
         <div 
           className="flex-1 bg-blue-500 text-white text-center py-2 rounded cursor-pointer hover:bg-blue-600 transition duration-200"
-          onClick={() => setModalOpen(true)}
+          onClick={() => setModalOpen(product.index) }
         >
           Varieties
         </div>
         <div 
           className="flex-1 bg-green-500 text-white text-center py-2 rounded cursor-pointer hover:bg-green-600 transition duration-200 ml-2"
-          onClick={() => setModalOpen(true)}
+          onClick={() => setModalOpen(product.index) }
         >
           Packaging
         </div>

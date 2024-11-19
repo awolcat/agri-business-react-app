@@ -17,19 +17,22 @@ const products = [
     varieties: ['Hass', 'Fuerte', 'Reed'],
     packaging: ['4kg Box', '10kg Box', 'Bulk Order'],
     image: avocadoImage,
-    varietyImage: avocadoVarietyImage
+    varietyImage: avocadoVarietyImage,
+    index: 0
   },
   {
     name: 'Avocado Oil',
     varieties: ['Extra Virgin', 'Refined'],
     packaging: ['250ml Bottle', '500ml Bottle', '1L Bottle', 'Bulk Order'],
-    image: avocadoOilImage
+    image: avocadoOilImage,
+    index: 1
   },
   {
     name: 'Macadamia Nuts',
     varieties: ['Raw', 'Roasted', 'Salted'],
     packaging: ['250g Pack', '500g Pack', '1kg Pack', 'Bulk Order'],
-    image: macademiaImage
+    image: macademiaImage,
+    index: 2
   }
 ];
 
@@ -37,6 +40,12 @@ const LandingPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentProductIndex, setCurrentProductIndex] = useState(0);
+
+  const openModal = (index) => {
+    setCurrentProductIndex(index);
+    setIsModalOpen(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,9 +104,11 @@ const LandingPage = () => {
       
       {/* Products */}
       <ProductDetailModal
+            key={currentProductIndex}
             products={products} 
             isOpen={isModalOpen} 
-            onClose={() => setIsModalOpen(false)} 
+            onClose={() => setIsModalOpen(false)}
+            index={currentProductIndex} 
       />
       <section id="products" className="py-16 bg-gray-50 animate-fade-in-up">
         <div className="container mx-auto px-4">
@@ -107,7 +118,7 @@ const LandingPage = () => {
             {products.map((product, index) => (
               <div key={product.name} style={{ animationDelay: `${index * 200}ms` }}>
                 <ProductCard product={product}
-                             setModalOpen={() => setIsModalOpen(true)} />
+                             setModalOpen={(idx) => openModal(idx)} />
               </div>
             ))}
           </div>
