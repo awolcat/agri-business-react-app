@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SuccessModal from './SuccessSubmitModal';
+import FailModal from './FailedSubmitModal';
 
 const EnquiryForm = ({products}) => {
     const [formData, setFormData] = useState({
@@ -18,7 +20,7 @@ const EnquiryForm = ({products}) => {
       e.preventDefault();
       setStatus('submitting');
       try {
-        // Send data to serverless function path
+        //Send data to serverless function path
         const response = await fetch('/api/submit', {
           method: 'POST',
           headers: {
@@ -32,6 +34,7 @@ const EnquiryForm = ({products}) => {
           
           throw new Error(error.message || 'Submission failed');
         }
+        
         setStatus('success');
         setFormData({ 
           country: '',
@@ -47,19 +50,16 @@ const EnquiryForm = ({products}) => {
       }
     };
   
-  
     return (
       <div>
         {status === 'success' && (
-        <div className="mb-4 bg-green-50 border-green-200">
-          <p>Message sent successfully!</p>
-        </div>
+        <SuccessModal isOpen={true}
+                      onClose={() => setStatus('idle')} />
       )}
       
       {status === 'error' && (
-        <div className="mb-4 bg-red-50 border-red-200">
-          <p>Something went wrong.</p>
-        </div>
+        <FailModal isOpen={true}
+                   onClose={() => setStatus('idle')} />
       )}
       
       <form onSubmit={handleSubmit} id="enquiry-form" className="max-w-lg mx-auto space-y-4 text-left">
@@ -172,8 +172,11 @@ const EnquiryForm = ({products}) => {
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors"
-        >
-          Submit Enquiry
+          disabled={status === 'submitting'}
+        >{status === 'submitting' ?
+          <div id='loading'></div> :
+          <>Submit Enquiry</>
+        }
         </button>
       </form>
       </div>
