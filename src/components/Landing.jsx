@@ -8,6 +8,7 @@ import avocadoImage from '../assets/avocadoes.jpeg';
 import avocadoOilImage from '../assets/avocadooil.jpeg';
 import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
+import ProductDetailModal from './ProductDetailModal';
 
 // Previous products array remains the same
 const products = [
@@ -16,25 +17,35 @@ const products = [
     varieties: ['Hass', 'Fuerte', 'Reed'],
     packaging: ['4kg Box', '10kg Box', 'Bulk Order'],
     image: avocadoImage,
-    varietyImage: avocadoVarietyImage
+    varietyImage: avocadoVarietyImage,
+    index: 0
   },
   {
     name: 'Avocado Oil',
     varieties: ['Extra Virgin', 'Refined'],
     packaging: ['250ml Bottle', '500ml Bottle', '1L Bottle', 'Bulk Order'],
-    image: avocadoOilImage
+    image: avocadoOilImage,
+    index: 1
   },
   {
     name: 'Macadamia Nuts',
     varieties: ['Raw', 'Roasted', 'Salted'],
     packaging: ['250g Pack', '500g Pack', '1kg Pack', 'Bulk Order'],
-    image: macademiaImage
+    image: macademiaImage,
+    index: 2
   }
 ];
 
 const LandingPage = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentProductIndex, setCurrentProductIndex] = useState(0);
+
+  const openModal = (index) => {
+    setCurrentProductIndex(index);
+    setIsModalOpen(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,19 +103,28 @@ const LandingPage = () => {
       <AboutSection />
       
       {/* Products */}
+      <ProductDetailModal
+            key={currentProductIndex}
+            products={products} 
+            isOpen={isModalOpen} 
+            onClose={() => setIsModalOpen(false)}
+            index={currentProductIndex} 
+      />
       <section id="products" className="py-16 bg-gray-50 animate-fade-in-up">
         <div className="container mx-auto px-4">
+          
           <h2 className="text-3xl font-bold mb-8 text-center">Our Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <div key={product.name} style={{ animationDelay: `${index * 200}ms` }}>
-                <ProductCard product={product} />
+                <ProductCard product={product}
+                             setModalOpen={(idx) => openModal(idx)} />
               </div>
             ))}
           </div>
+          
         </div>
       </section>
-
       {/* Enquiry Form */}
       <section id="enquiry" className="py-16 bg-white">
         <div className="container mx-auto px-4">
