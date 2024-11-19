@@ -1,4 +1,15 @@
-const SuccessModal = ({ onClose, message = "Message sent successfully!" }) => {
+const SuccessModal = ({ isOpen, onClose, message = "Message sent successfully!" }) => {
+  useEffect(() => {
+    if (isOpen) {
+      // Disable scrolling on body when modal is open
+      document.body.style.overflow = 'hidden';
+      
+      // Cleanup function to re-enable scrolling when modal closes
+      return () => {
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [isOpen]);
   
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-white fixed top-0 left-0 w-full h-full">

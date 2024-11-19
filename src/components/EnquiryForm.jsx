@@ -55,7 +55,8 @@ const EnquiryForm = ({products}) => {
     return (
       <div>
         {status === 'success' && (
-        <SuccessModal onClose={() => setStatus('idle')} />
+        <SuccessModal isOpen={true}
+                      onClose={() => setStatus('idle')} />
       )}
       
       {status === 'error' && (
