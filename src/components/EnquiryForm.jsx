@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SuccessModal from './SuccessSubmitModal';
+import FailModal from './FailedSubmitModal';
 
 const EnquiryForm = ({products}) => {
     const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ const EnquiryForm = ({products}) => {
         //   throw new Error(error.message || 'Submission failed');
         // }
         await new Promise(r => setTimeout(r, 2000));
-        setStatus('success');
+        setStatus('error');
         setFormData({ 
           country: '',
           city: '',
@@ -49,9 +50,6 @@ const EnquiryForm = ({products}) => {
       }
     };
   
-  //<div className="mb-4 bg-green-50 border-green-200">
-  //<p>Message sent successfully!</p>
-  //</div>
     return (
       <div>
         {status === 'success' && (
@@ -60,9 +58,8 @@ const EnquiryForm = ({products}) => {
       )}
       
       {status === 'error' && (
-        <div className="mb-4 bg-red-50 border-red-200">
-          <p>Something went wrong.</p>
-        </div>
+        <FailModal isOpen={true}
+                   onClose={() => setStatus('idle')} />
       )}
       
       <form onSubmit={handleSubmit} id="enquiry-form" className="max-w-lg mx-auto space-y-4 text-left">
