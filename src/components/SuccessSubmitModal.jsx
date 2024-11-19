@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const SuccessModal = ({ isOpen, onClose, message = "Message sent successfully!" }) => {
   useEffect(() => {
     if (isOpen) {
