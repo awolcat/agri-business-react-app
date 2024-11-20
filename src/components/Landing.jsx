@@ -143,7 +143,7 @@ const LandingPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { icon: Mail, title: 'Email', content: 'extrafreshfarm01@gmail.com' },
-                { icon: Phone, title: 'Phone', content: '+61 (426) 442 026' },
+                { icon: Phone, title: 'Phone', content: '+61 (426) 442 026\n+254 745 333213' },
                 { icon: MapPin, title: 'Address', content: 'Thika, Kenya' }
               ].map((item, index) => (
                 <div 
