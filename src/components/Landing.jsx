@@ -80,21 +80,28 @@ const LandingPage = () => {
       {/*<ProgressBar progress={scrollProgress} />*/}
 
       {/* Hero Section */}
-      <header className="bg-green-600 text-white pt-24">
-        <div className="container mx-auto px-4 py-16">
-          <div className="opacity-0 animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Premium Agricultural Products
+      <header className="relative mx-auto h-[34rem]">
+        <img class="h-full w-full object-cover h-128" src="/src/assets/hero_image.jpeg" alt="Random image" />
+        <div class="absolute inset-0 bg-black opacity-30 "></div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="container px-4 md:mx-auto opacity-0 flex flex-col items-start gap-4 animate-fade-in-up">
+            <p className='underline-me text-white font-bold text-xl'>Organic & Natural</p>
+            <h1 className="text-4xl md:text-5xl text-left font-bold text-green-400">
+              Premium Agricultural 
             </h1>
-            <p className="text-xl mb-8">
-              Quality avocados, pure avocado oil, and premium macadamia nuts
+            <h1 className="text-4xl md:text-5xl text-left font-bold text-white">
+              Products
+            </h1>
+            <p className="text-l w-4/6 md:w-2/6 text-left text-slate-200">
+              Quality avocados, pure avocado oil, and premium macadamia nuts sourced directly
+              from the best organic farms. 
             </p>
             <a 
               href="#products" 
-              className="inline-flex items-center bg-white text-green-600 px-6 py-3 rounded-md hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center bg-green-400 hover:text-black px-6 py-3 rounded-md hover:bg-green-500 transition-all duration-300 hover:scale-105"
               onClick={(e) => scrollToSection(e, '#products')}
             >
-              View Products
+              Discover More
               <ChevronDown className="ml-2" />
             </a>
           </div>
