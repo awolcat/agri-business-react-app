@@ -10,6 +10,7 @@ import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
 import ProductDetailModal from './ProductDetailModal';
 import TopBanner from './TopBanner';
+import BenefitsBanner from './BenefitsBanner';
 
 // Previous products array remains the same
 const products = [
@@ -81,8 +82,8 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <header className="relative mx-auto h-[34rem]">
-        <img class="h-full w-full object-cover h-128" src="/src/assets/hero_image.jpeg" alt="Random image" />
-        <div class="absolute inset-0 bg-black opacity-30 "></div>
+        <img className="h-full w-full object-cover h-128" src="/src/assets/hero_image.jpeg" alt="Random image" />
+        <div className="absolute inset-0 bg-black opacity-30 "></div>
         <div className="absolute inset-0 flex items-center">
           <div className="container px-4 md:mx-auto opacity-0 flex flex-col items-start gap-4 animate-fade-in-up">
             <p className='underline-me text-white font-bold text-xl'>Organic & Natural</p>
@@ -107,6 +108,9 @@ const LandingPage = () => {
           </div>
         </div>
       </header>
+
+      {/* Benefits Banner */}
+      <BenefitsBanner />
 
       {/* About Us - with fade in animation */}
       <AboutSection />
