@@ -9,6 +9,7 @@ import avocadoOilImage from '../assets/avocadooil.jpeg';
 import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
 import ProductDetailModal from './ProductDetailModal';
+import TopBanner from './TopBanner';
 
 // Previous products array remains the same
 const products = [
@@ -74,6 +75,7 @@ const LandingPage = () => {
     <>
     
     <div className="min-h-screen bg-gray-50">
+      <TopBanner />
       <Navigation isScrolled={isScrolled} scrollProgress={scrollProgress} />
       {/*<ProgressBar progress={scrollProgress} />*/}
 
