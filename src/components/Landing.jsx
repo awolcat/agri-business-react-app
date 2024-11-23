@@ -12,6 +12,7 @@ import ProductDetailModal from './ProductDetailModal';
 import TopBanner from './TopBanner';
 import BenefitsBanner from './BenefitsBanner';
 import InfoBanner from './InfoBanner';
+import Footer from './Footer';
 
 // Previous products array remains the same
 const products = [
@@ -75,8 +76,7 @@ const LandingPage = () => {
 
   return (
     <>
-    
-    <div className="min-h-screen bg-gray-50">
+    <div id="home" className="min-h-screen bg-gray-50">
       <TopBanner />
       <Navigation isScrolled={isScrolled} scrollProgress={scrollProgress} />
       {/*<ProgressBar progress={scrollProgress} />*/}
@@ -183,11 +183,7 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-green-800 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 Extra Fresh Farm.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
     </>
   );
