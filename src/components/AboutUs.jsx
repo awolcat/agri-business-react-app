@@ -2,10 +2,10 @@ import {CircleCheck} from 'lucide-react';
 
 
 const AboutSection = () => (
-    <section id="about" className="py-2 h-screen lg:h-[34rem] bg-white">
+    <section id="about" className="py-2 h-full md:h-[64rem] lg:h-[34rem] bg-white">
       <div className="container mx-auto h-full px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-0 h-full justify-items-center items-center px-0">
-          <div className="relative w-5/6 h-[34rem] lg:h-full lg:justify-self-start">
+          <div className="relative w-full md:w-5/6 h-[34rem] lg:h-full lg:justify-self-start">
             <div className='absolute h-[22rem] w-80 inset-0'>
               <img className='object-cover object-top h-[22rem] w-80 rounded-lg' src='/src/assets/macademiatree.webp' alt='Macademia tree'/>
             </div>

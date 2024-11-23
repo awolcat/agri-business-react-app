@@ -5,19 +5,19 @@ import { ChevronRight } from 'lucide-react';
 const ProductCard = ({ product, setModalOpen }) => {
   return (
     <div 
-      className="relative h-full w-full opacity-0 translate-y-8 animate-fade-in-up bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+      className="relative h-full h-[24rem] w-full opacity-0 translate-y-8 animate-fade-in-up bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
     >
       <img 
         src={product.image} 
         alt={product.name}
         className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300 animate-fade-in cursor-pointer"
       />
-      <div className="absolute inset-0 rounded-lg bg-black from-black opacity-50 "></div>
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-black to-green opacity-80 "></div>
       <div className="absolute inset-0 flex flex-col text-white justify-between py-4 items-center">
         <div className='flex flex-col items-center gap-2 w-full'>
           <p className='uppercase text-sm'>{product.name.split(' ').shift()}</p>
           <h3 className="text-2xl font-semibold text-green-500 mb-2">{product.name.split(' ').slice(1, 3).join(' ')}</h3>
-          <ul className="list-disc truncate w-full inline-flex justify-evenly px-2">
+          <ul className="list-disc truncate w-full inline-flex justify-evenly px-2 mb-4 font-bold text-lg">
             {product.varieties.map((variety, index) => (
               <li key={index} className='float-left '>{variety}</li>
             ))}
