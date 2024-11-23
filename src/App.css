@@ -9,7 +9,7 @@
   position: relative;
 }
 
-.underline-me::before {
+.underline-me::after {
   content: '';
   position: absolute;
   width: 100%;
