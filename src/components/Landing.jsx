@@ -11,6 +11,7 @@ import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
 import ProductDetailModal from './ProductDetailModal';
 import TopBanner from './TopBanner';
 import BenefitsBanner from './BenefitsBanner';
+import InfoBanner from './InfoBanner';
 
 // Previous products array remains the same
 const products = [
@@ -141,6 +142,10 @@ const LandingPage = () => {
           
         </div>
       </section>
+      
+      {/* Info Banner */}
+      <InfoBanner />
+
       {/* Enquiry Form */}
       <section id="enquiry" className="py-16 bg-white">
         <div className="container mx-auto px-4">

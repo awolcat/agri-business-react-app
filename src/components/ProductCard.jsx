@@ -15,7 +15,7 @@ const ProductCard = ({ product, setModalOpen }) => {
       <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-black to-green opacity-80 "></div>
       <div className="absolute inset-0 flex flex-col text-white justify-between py-4 items-center">
         <div className='flex flex-col items-center gap-2 w-full'>
-          <p className='uppercase text-sm'>{product.name.split(' ').shift()}</p>
+          <p className='uppercase text-sm font-thin'>{product.name.split(' ').shift()}</p>
           <h3 className="text-2xl font-semibold text-green-500 mb-2">{product.name.split(' ').slice(1, 3).join(' ')}</h3>
           <ul className="list-disc truncate w-full inline-flex justify-evenly px-2 mb-4 font-bold text-lg">
             {product.varieties.map((variety, index) => (
@@ -24,10 +24,10 @@ const ProductCard = ({ product, setModalOpen }) => {
           </ul>
           <a 
               href="#products" 
-              className="inline-flex bg-white text-green-400 px-4 py-1 rounded-full hover:text-green-500 transition-all duration-300 hover:scale-105"
+              className="inline-flex bg-white text-green-400 font-semibold px-4 py-1 rounded-full hover:text-green-500 transition-all duration-300 hover:scale-105"
               onClick={() => setModalOpen(product.index) }
             >
-              Enquire
+              Learn More
               <ChevronRight className="ml-2" />
             </a>
         </div>
