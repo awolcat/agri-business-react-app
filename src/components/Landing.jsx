@@ -23,14 +23,14 @@ const products = [
     index: 0
   },
   {
-    name: 'Avocado Oil',
+    name: 'Pure Avocado Oil',
     varieties: ['Extra Virgin', 'Refined'],
     packaging: ['250ml Bottle', '500ml Bottle', '1L Bottle', 'Bulk Order'],
     image: avocadoOilImage,
     index: 1
   },
   {
-    name: 'Macadamia Nuts',
+    name: 'Organic Macadamia Nuts',
     varieties: ['Raw', 'Roasted', 'Salted'],
     packaging: ['250g Pack', '500g Pack', '1kg Pack', 'Bulk Order'],
     image: macademiaImage,
@@ -82,7 +82,7 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <header className="relative mx-auto h-[34rem]">
-        <img className="h-full w-full object-cover h-128" src="/src/assets/hero_image.jpeg" alt="Random image" />
+        <img className="h-full w-full object-cover h-128" src="/src/assets/hero_image.jpeg" alt="Avocados" />
         <div className="absolute inset-0 bg-black opacity-30 "></div>
         <div className="absolute inset-0 flex items-center">
           <div className="container px-4 md:mx-auto opacity-0 flex flex-col items-start gap-4 animate-fade-in-up">
@@ -124,10 +124,13 @@ const LandingPage = () => {
             index={currentProductIndex} 
       />
       <section id="products" className="py-16 bg-gray-50 animate-fade-in-up">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto flex flex-col items-center px-4">
           
-          <h2 className="text-3xl font-bold mb-8 text-center">Our Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h2 className="text-lg mb-4 text-center">OUR PRODUCTS</h2>
+          <h3 className="text-4xl font-bold text-center mb-12">
+            Organic & Quality Products
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-4/6">
             {products.map((product, index) => (
               <div key={product.name} style={{ animationDelay: `${index * 200}ms` }}>
                 <ProductCard product={product}
