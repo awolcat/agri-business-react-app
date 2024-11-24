@@ -10,7 +10,7 @@ import { MapPin } from 'lucide-react';
             {/* Location */}
             <div className='flex flex-row items-center gap-1'>
                <MapPin size={16}/> 
-               <p>Nairobi, Kenya</p>
+               <p>Thika, Kenya</p>
             </div>
             {/* Language */}
             <p>English</p>

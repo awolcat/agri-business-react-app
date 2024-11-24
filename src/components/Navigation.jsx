@@ -31,7 +31,7 @@ const ProgressBar = ({ progress }) => (
     };
   
     return (
-      <nav className="w-full mx-auto transition-all duration-75 bg-white">
+      <nav className="w-full sticky top-0 z-50 mx-auto transition-all duration-75 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
