@@ -156,32 +156,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Contact Us */}
-      <section id="contact" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center opacity-0 animate-fade-in-up">Contact Us</h2>
-          <div className="max-w-2xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { icon: Mail, title: 'Email', content: 'extrafreshfarm01@gmail.com' },
-                { icon: Phone, title: 'Phone', content: '+61 (426) 442 026\n+254 745 333213' },
-                { icon: MapPin, title: 'Address', content: 'Thika, Kenya' }
-              ].map((item, index) => (
-                <div 
-                  key={item.title}
-                  className="flex flex-col items-center text-center opacity-0 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <item.icon className="w-8 h-8 text-green-600 mb-4" />
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-600 whitespace-pre-line">{item.content}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <Footer />
     </div>

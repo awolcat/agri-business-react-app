@@ -16,7 +16,7 @@ const infoBanner = () => {
                 <div className="flex flex-row items-center gap-4">
                 <a 
                     href="#products" 
-                    className="inline-flex items-center bg-green-400 hover:text-black px-6 py-3 rounded-md hover:bg-green-500 transition-all duration-300 hover:scale-105"
+                    className="inline-flex items-center bg-green-500 font-semibold text-white hover:text-white px-6 py-3 rounded-md hover:bg-green-600 transition-all duration-300 hover:scale-105"
                     onClick={(e) => scrollToSection(e, '#products')}
                     >
                     Enquire

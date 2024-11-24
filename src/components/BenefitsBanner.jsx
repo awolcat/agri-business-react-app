@@ -18,8 +18,6 @@ const benefits = [
   }
 ]; 
 
-console.log(benefits);
-
 const BenefitsBanner = () => (
     <section id="benefits" className="container mx-auto py-5 flex justify-center">
       <div className="flex flex-col flex-wrap items-start w-fit bg-white gap-2 -mt-14 z-50 py-5 rounded-lg shadow-lg md:justify-center md:flex-row px-4 md:gap-4 lg:gap-0 divide-x divide-gray-300">

@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       email: email,
       firstName: name,
       unsubscribed: false,
-      audienceId: '2cd3c10b-72d4-4c57-96e7-9620e367f5c5',
+      audienceId: process.env.RESEND_AUDIENCE_ID
     });
     return res.status(200).json({ message: 'Email sent successfully' });
 
