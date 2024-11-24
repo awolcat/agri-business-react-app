@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 const ProductCard = ({ product, setModalOpen }) => {
   return (
     <div 
-      className="relative h-full h-[24rem] w-full opacity-0 translate-y-8 animate-fade-in-up bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+      className="relative  h-[24rem] w-full opacity-0 translate-y-8 animate-fade-in-up bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
     >
       <img 
         src={product.image} 

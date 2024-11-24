@@ -125,13 +125,13 @@ const LandingPage = () => {
             index={currentProductIndex} 
       />
       <section id="products" className="py-16 h-[96rem] md:h-full bg-gray-50 animate-fade-in-up">
-        <div className="container mx-auto flex flex-col items-center px-4">
+        <div className="container mx-auto flex flex-col h-full items-center px-4">
           
           <h2 className="text-lg mb-4 text-center">OUR PRODUCTS</h2>
           <h3 className="text-4xl font-bold text-center mb-12">
             Organic & Quality Products
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-5/6">
+          <div className="grid grid-cols-1 h-full md:grid-cols-1 lg:grid-cols-3 gap-8 w-5/6">
             {products.map((product, index) => (
               <div key={product.name} style={{ animationDelay: `${index * 200}ms` }}>
                 <ProductCard product={product}

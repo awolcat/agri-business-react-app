@@ -49,8 +49,8 @@ const Footer = () => {
                     </p>
                 </div>
                 <div className="flex flex-col text-left md:w-28 gap-2">
-                    <h3 className="font-semibold text-2xl">Links</h3>
-                    <div className="flex flex-row justify-between rounded-lg w-3/6 h-1">
+                    <h3 className="font-bold">Links</h3>
+                    <div className="flex flex-row justify-between rounded-lg w-2/6 h-[0.2rem]">
                         <div className="bg-green-500 w-4/6 rounded-lg"></div>
                         <div className="bg-green-500 w-1 rounded-lg"></div>
                     </div>
@@ -63,8 +63,8 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="flex flex-col items-start text-left md:w-1/6 gap-2">
-                    <h3 className="font-semibold text-2xl">Contacts</h3>
-                    <div className="flex flex-row justify-between rounded-lg w-3/6 h-1">
+                    <h3 id="contact" className="font-bold">Contacts</h3>
+                    <div className="flex flex-row justify-between rounded-lg w-1/5 h-[0.2rem]">
                         <div className="bg-green-500 w-4/6 rounded-lg"></div>
                         <div className="bg-green-500 w-1 rounded-lg"></div>
                     </div>
@@ -88,10 +88,10 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="flex flex-col items-start text-left gap-2 md:w-60 md:ml-10">
-                    <h3 className="font-semibold text-2xl">Newsletter</h3>
-                    <div className="flex flex-row justify-between rounded-lg w-3/6 h-1">
+                    <h3 className="font-bold">Newsletter</h3>
+                    <div className="flex flex-row justify-between rounded-lg w-1/5 h-[0.2rem]">
                         <div className="bg-green-500 w-4/6 rounded-lg"></div>
-                        <div className="bg-green-500 w-1 rounded-lg"></div>
+                        <div className="bg-green-500 w-1 rounded-full"></div>
                     </div>
                     <p className="text-sm">
                         Subscribe to our weekly Newsletter and

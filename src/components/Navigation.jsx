@@ -17,6 +17,7 @@ const ProgressBar = ({ progress }) => (
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     const navLinks = [
+      { href: '#home', text: 'Home' },
       { href: '#about', text: 'About' },
       { href: '#products', text: 'Products' },
       { href: '#enquiry', text: 'Enquiry' },
