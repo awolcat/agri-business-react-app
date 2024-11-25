@@ -65,8 +65,9 @@ const EnquiryForm = ({products}) => {
       <form onSubmit={handleSubmit} id="enquiry-form" className="max-w-lg mx-auto space-y-4 text-left">
         <div className='flex flex-row flex-wrap justify-between'>
           <div className='w-5/12'>
-            <label className="block text-sm font-medium mb-1">Name or Org</label>
+            <label htmlFor='name' className="block text-sm font-medium mb-1">Name or Org</label>
             <input
+              id='name'
               type="name"
               required
               className="w-full p-2 border rounded-md bg-green-900 text-white"
@@ -75,8 +76,9 @@ const EnquiryForm = ({products}) => {
             />
           </div>
           <div className='w-6/12'>
-            <label className="block text-sm font-medium mb-1">Email</label>
+            <label htmlFor='email' className="block text-sm font-medium mb-1">Email</label>
             <input
+              id='email'
               type="email"
               required
               className="w-full p-2 border rounded-md bg-green-900 text-white"
@@ -86,8 +88,9 @@ const EnquiryForm = ({products}) => {
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Country</label>
+          <label htmlFor='country' className="block text-sm font-medium mb-1">Country</label>
           <input
+            id='country'
             type="text"
             required
             className="w-full p-2 border rounded-md bg-green-900 text-white"
@@ -96,8 +99,9 @@ const EnquiryForm = ({products}) => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">City</label>
+          <label htmlFor='city' className="block text-sm font-medium mb-1">City</label>
           <input
+            id='city'
             type="text"
             required
             className="w-full p-2 border rounded-md bg-green-900 text-white"
@@ -107,8 +111,9 @@ const EnquiryForm = ({products}) => {
         </div>
         <div className='flex flex-row gap-4 flex-nowrap items-end justify-end'>
           <div className='w-full'>
-            <label className="block text-sm font-medium mb-1 ">Product</label>
-            <select 
+            <label htmlFor='product' className="block text-sm font-medium mb-1 ">Product</label>
+            <select
+              id='product' 
               required
               className="w-full p-2 border rounded-md bg-green-900 text-white"
               value={formData.product}
@@ -123,8 +128,9 @@ const EnquiryForm = ({products}) => {
 
             {/*Quantity*/}
             <div className='w-4/12 flex-grow-1'>
-            <label className="block text-sm font-medium mb-1">Quantity</label>
+            <label htmlFor='quantity' className="block text-sm font-medium mb-1">Quantity</label>
             <input
+              id='quantity'
               type="number"
               min="1"
               max="1000"
@@ -150,8 +156,9 @@ const EnquiryForm = ({products}) => {
           </div>
           
         <div>
-          <label className="block text-sm font-medium mb-1">Target Price (USD)</label>
+          <label htmlFor='price' className="block text-sm font-medium mb-1">Target Price (USD)</label>
           <input
+            id='price'
             type="number"
             min="0"
             required
@@ -161,8 +168,9 @@ const EnquiryForm = ({products}) => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Additional Notes</label>
+          <label htmlFor='notes' className="block text-sm font-medium mb-1">Additional Notes</label>
           <textarea
+            id='notes'
             className="w-full p-2 border rounded-md bg-green-900 text-white"
             rows="4"
             value={formData.notes}

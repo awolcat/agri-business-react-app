@@ -9,12 +9,11 @@ export default async function handler(req, res) {
 
   try {
     const { email} = req.body;
-    // await resend.contacts.create({
-    //     email: email,
-    //     unsubscribed: false,
-    //     audienceId: process.env.RESEND_AUDIENCE_ID
-    //   });
-      console.log(email);
+    await resend.contacts.create({
+        email: email,
+        unsubscribed: false,
+        audienceId: process.env.RESEND_AUDIENCE_ID
+      });
       return res.status(200).json({ message: 'Contact saved successfully' });
     } catch (error) {
         return res.status(500).json({ message: error.message || 'Error saving contact' });

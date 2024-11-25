@@ -99,8 +99,10 @@ const Footer = () => {
                     </p>
                     <div className='relative w-64 h-10'>
                         <div className='absolute inset-0 w-full flex h-full items-center'>
-                            <form className='w-full h-full' onSubmit={handleSubmit} id='newsletter-form'>
-                                <input 
+                            <form className='w-full h-full' onSubmit={handleSubmit} id='newsletter'>
+                                <label htmlFor='newsletter-email' className='sr-only'>Email Address</label>
+                                <input
+                                    id='newsletter-email' 
                                     type='email'
                                     placeholder='Email Address'
                                     className=' absolute inset-0 bg-stone-700 text-sm rounded-l-md px-2 h-full w-5/6'
