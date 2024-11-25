@@ -8,10 +8,11 @@ const EnquiryForm = ({products}) => {
       city: '',
       product: '',
       quantity: '',
+      units: '',
       price: '',
       email: '',
       name: '',
-      notes: ''
+      notes: '',
     });
     const [status, setStatus] = useState('idle');
     
@@ -41,10 +42,11 @@ const EnquiryForm = ({products}) => {
           city: '',
           product: '',
           quantity: '',
+          units: '',
           price: '',
           email: '',
           name: '',
-          notes: '' });
+          notes: '', });
       } catch (error) {
         setStatus('error');
       }
@@ -65,52 +67,57 @@ const EnquiryForm = ({products}) => {
       <form onSubmit={handleSubmit} id="enquiry-form" className="max-w-lg mx-auto space-y-4 text-left">
         <div className='flex flex-row flex-wrap justify-between'>
           <div className='w-5/12'>
-            <label className="block text-sm font-medium mb-1">Name or Org</label>
+            <label htmlFor='name' className="block text-sm font-medium mb-1">Name or Org</label>
             <input
+              id='name'
               type="name"
               required
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-green-900 text-white"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
             />
           </div>
           <div className='w-6/12'>
-            <label className="block text-sm font-medium mb-1">Email</label>
+            <label htmlFor='email' className="block text-sm font-medium mb-1">Email</label>
             <input
+              id='email'
               type="email"
               required
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-green-900 text-white"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
             />
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Country</label>
+          <label htmlFor='country' className="block text-sm font-medium mb-1">Country</label>
           <input
+            id='country'
             type="text"
             required
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.country}
             onChange={(e) => setFormData({...formData, country: e.target.value})}
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">City</label>
+          <label htmlFor='city' className="block text-sm font-medium mb-1">City</label>
           <input
+            id='city'
             type="text"
             required
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.city}
             onChange={(e) => setFormData({...formData, city: e.target.value})}
           />
         </div>
         <div className='flex flex-row gap-4 flex-nowrap items-end justify-end'>
           <div className='w-full'>
-            <label className="block text-sm font-medium mb-1 ">Product</label>
-            <select 
+            <label htmlFor='product' className="block text-sm font-medium mb-1 ">Product</label>
+            <select
+              id='product' 
               required
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-green-900 text-white"
               value={formData.product}
               onChange={(e) => setFormData({...formData, product: e.target.value})}
             >
@@ -123,25 +130,28 @@ const EnquiryForm = ({products}) => {
 
             {/*Quantity*/}
             <div className='w-4/12 flex-grow-1'>
-            <label className="block text-sm font-medium mb-1">Quantity</label>
+            <label htmlFor='quantity' className="block text-sm font-medium mb-1">Quantity</label>
             <input
+              id='quantity'
               type="number"
               min="1"
               max="1000"
               required
-              className="w-full p-2 border rounded-md text-center"
+              className="w-full p-2 border rounded-md text-center bg-green-900 text-white"
               value={formData.quantity}
               onChange={(e) => setFormData({...formData, quantity: e.target.value})}
             />
           </div>
           {/*Unit*/}
         {formData.product && (<div className='w-4/12 flex-grow-0'>
-          <label className="block text-sm font-medium mb-1"></label>
+          <label htmlFor='units' className="block text-sm font-medium mb-1 sr-only">Units</label>
           <select
+            id='units'
             required 
             disabled
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.product === 'Avocado Oil' ? 'ltrs' : 'kgs'}
+            onChange={(e) => setFormData({...formData, units: e.target.value})}
           >
             <option value="ltrs">ltrs</option>
             <option value="kgs">kgs</option>
@@ -150,20 +160,22 @@ const EnquiryForm = ({products}) => {
           </div>
           
         <div>
-          <label className="block text-sm font-medium mb-1">Target Price (USD)</label>
+          <label htmlFor='price' className="block text-sm font-medium mb-1">Target Price (USD)</label>
           <input
+            id='price'
             type="number"
             min="0"
             required
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.price}
             onChange={(e) => setFormData({...formData, price: e.target.value})}
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1">Additional Notes</label>
+          <label htmlFor='notes' className="block text-sm font-medium mb-1">Additional Notes</label>
           <textarea
-            className="w-full p-2 border rounded-md"
+            id='notes'
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             rows="4"
             value={formData.notes}
             onChange={(e) => setFormData({...formData, notes: e.target.value})}
@@ -171,7 +183,7 @@ const EnquiryForm = ({products}) => {
         </div>
         <button
           type="submit"
-          className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors"
+          className="w-full bg-green-600 text-white h-[3rem] text-sm font-semibold py-2 px-4 rounded-md hover:bg-green-700 transition-colors uppercase"
           disabled={status === 'submitting'}
         >{status === 'submitting' ?
           <div id='loading'></div> :

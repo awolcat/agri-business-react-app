@@ -1,55 +1,47 @@
-import {Leaf, Tractor} from 'lucide-react';
-import avocadoTree from '../assets/avocadotree.jpeg';
-import trailerLoading from '../assets/trailerloading.jpeg';
+import {CircleCheck} from 'lucide-react';
+import macademiaTree from '../assets/macademiatree.webp';
+import avocadoTree from '../assets/avocadoontree.webp';
 
 const AboutSection = () => (
-    <section id="about" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center opacity-0 animate-fade-in-up mb-0.5">
-          About Us
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-items-center items-center">
-          <div className="flex flex-col gap-4 items-center justify-items-center justify-center text-gray-600 opacity-0 animate-fade-in-up w-full md:w-3/5">
-            <div className='flex flex-row justify-center justif-items-center items-center'>
-                <div className='w-8'>
-                    <p><Leaf size={48} color="green"/></p>
-                </div>
+    <section id="about" className="py-2 h-full md:h-[64rem] lg:h-[34rem] bg-white">
+      <div className="container mx-auto h-full px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-0 h-full justify-items-center items-center px-0">
+          <div className="relative w-full md:w-5/6 h-[34rem] lg:h-full lg:justify-self-start">
+            <div className='absolute h-[22rem] w-80 inset-0'>
+              <img className='object-cover object-top h-[22rem] w-80 rounded-lg' src={macademiaTree} alt='Macademia tree'/>
             </div>
-            <p className='text-3xl text-center'>
-            
-              We are dedicated to producing and supplying the highest quality agricultural products
-              to customers worldwide. Our farms utilize sustainable farming practices to ensure
-              the best quality produce while protecting the environment.
-            </p>
-          </div>
-          
-          <div className="opacity-0 animate-fade-in-up w-4/5 h-4/5">
-            <img 
-              src={avocadoTree} 
-              alt="About Us" 
-              className="w-full h-full object-cover rounded-md hover:scale-105 transition-transform duration-300 cursor-pointer"
-            />
-          </div>
-          
-          <div className="opacity-0 animate-fade-in-up w-4/5 h-4/5">
-            <img 
-              src={trailerLoading} 
-              alt="About Us" 
-              className="w-full h-full object-cover rounded-md hover:scale-105 transition-transform duration-300 cursor-pointer"
-            />
-          </div>
-          <div className="flex flex-col gap-4 items-center justify-items-center justify-center text-gray-600 opacity-0 animate-fade-in-up w-full md:w-3/5">
-            <div className='flex flex-row justify-center justif-items-center items-center'>
-                <div className='w-8'>
-                    <p><Tractor size={48} color="green"/></p>
-                </div>
+            <div className='absolute h-[22-rem] w-80 bottom-0 right-0 border-4 border-white rounded-lg'>
+              <img className='object-cover object-right h-[22rem] w-80 rounded-lg' src={avocadoTree} alt='Avocado tree'/>
             </div>
-            <p className='text-3xl text-center'>
-              With decades of experience in cultivation and processing, we maintain strict quality
-              control standards throughout our supply chain, from farm to delivery.
-            </p>
           </div>
           
+          <div className="flex flex-col lg:justify-self-start justify-center text-left gap-8 opacity-0 animate-fade-in-up w-5/6">
+            <h1 className='text-xl'>ABOUT US</h1>
+            <h2 className='text-4xl font-bold pr-10'>Pure Agriculture and Organic Farm</h2>
+            <div className='flex flex-col gap-3'>
+              <h3 className='text-2xl text-green-500'>We’re Leaders in the Agriculture Market </h3>
+              <p className=''>
+                We are dedicated to producing and supplying the highest quality agricultural products
+                to customers worldwide. Our farms utilise sustainable farming practices to ensure the
+                best quality produce while protecting the environment.
+              </p>
+            </div>
+            <ul>
+              <li className='flex gap-2 items-center'>
+                <CircleCheck size={16} color="#18d100" />
+                <p>Experienced in cultivation and processing</p>
+              </li>
+              <li className='flex gap-2 items-center'>
+                <CircleCheck size={16} color="#18d100" />
+                <p>Maintain strict quality control standards</p>
+              </li>
+              <li className='flex gap-2 items-center'>
+                <CircleCheck size={16} color="#18d100" />
+                <p>Organic and natural product</p>
+              </li>
+            </ul>
+          </div>
+                              
         </div>
       </div>
     </section>

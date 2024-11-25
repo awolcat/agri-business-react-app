@@ -1,9 +1,28 @@
 #root {
-  max-width: 1280px;
+  /*max-width: 1280px;*/
   margin: 0 auto;
   padding: 0rem;
   text-align: center;
 }
+
+.underline-me {
+  position: relative;
+}
+
+.underline-me::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-position: center;
+  background-size: cover;
+  bottom: -8px;
+  left: 0;
+  background-image: url('/src/assets/underline.png');
+  background-color: none;
+}
+
+
 
 input, select, textarea {
   background-color: white;
@@ -121,3 +140,4 @@ input[type=number] {
 .read-the-docs {
   color: #888;
 }
+

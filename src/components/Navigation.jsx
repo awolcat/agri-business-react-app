@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, PhoneCall } from 'lucide-react';
 
 // Progress Bar component
 const ProgressBar = ({ progress }) => (
@@ -17,6 +17,7 @@ const ProgressBar = ({ progress }) => (
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     const navLinks = [
+      { href: '#home', text: 'Home' },
       { href: '#about', text: 'About' },
       { href: '#products', text: 'Products' },
       { href: '#enquiry', text: 'Enquiry' },
@@ -31,11 +32,11 @@ const ProgressBar = ({ progress }) => (
     };
   
     return (
-      <nav className={`fixed z-50 container mx-auto transition-all duration-300 ${isScrolled ? 'bg-white text-green-600 shadow-md' : 'bg-transparent text-white'}`}>
+      <nav className="w-full sticky top-0 z-50 mx-auto transition-all duration-75 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="text-xl font-bold">ExtraFreshFarm</a>
+            <a href="#" className="text-3xl text-slate-700">Extra Fresh Farm</a>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
@@ -50,7 +51,15 @@ const ProgressBar = ({ progress }) => (
                 </a>
               ))}
             </div>
-  
+
+            {/*Call CTA*/}
+            <div className='hidden lg:flex flex-row text-slate-700 items-center gap-2'>
+              <PhoneCall />
+              <div className="flex flex-col justify-start">
+                <p className='text-xs text-left font-bold'>+61 (426) 442-026</p>
+                <p className='text-xs text-left font-bold'>+254 (745) 333-213</p>
+              </div>
+            </div>
             {/* Mobile Menu Button */}
             <button
               className="md:hidden"
@@ -75,10 +84,17 @@ const ProgressBar = ({ progress }) => (
                   {link.text}
                 </a>
               ))}
+              <div className='flex flex-row text-slate-500 items-center justify-center gap-2'>
+                <PhoneCall />
+                <div className="flex flex-col justify-start">
+                  <p className='text-xsm text-left'>+61 (426) 442-026</p>
+                  <p className='text-xsm text-left'>+254 (745) 333-213</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <ProgressBar progress={scrollProgress} />
+        {/*<ProgressBar progress={scrollProgress} />*/}
       </nav>
     );
   };
