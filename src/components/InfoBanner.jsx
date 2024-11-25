@@ -16,9 +16,9 @@ const infoBanner = () => {
                 </div>
                 <div className="flex flex-row items-center gap-4">
                 <a 
-                    href="#products" 
+                    href="#enquiry-form" 
                     className="inline-flex items-center bg-green-500 font-semibold text-white hover:text-white px-6 py-3 rounded-md hover:bg-green-600 transition-all duration-300 hover:scale-105"
-                    onClick={(e) => scrollToSection(e, '#products')}
+                    onClick={(e) => scrollToSection(e, '#enquiry-form')}
                     >
                     Enquire
                     <ChevronDown className="ml-2" />
