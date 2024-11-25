@@ -69,7 +69,7 @@ const EnquiryForm = ({products}) => {
             <input
               type="name"
               required
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-green-900 text-white"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
             />
@@ -79,7 +79,7 @@ const EnquiryForm = ({products}) => {
             <input
               type="email"
               required
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-green-900 text-white"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
             />
@@ -90,7 +90,7 @@ const EnquiryForm = ({products}) => {
           <input
             type="text"
             required
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.country}
             onChange={(e) => setFormData({...formData, country: e.target.value})}
           />
@@ -100,7 +100,7 @@ const EnquiryForm = ({products}) => {
           <input
             type="text"
             required
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.city}
             onChange={(e) => setFormData({...formData, city: e.target.value})}
           />
@@ -110,7 +110,7 @@ const EnquiryForm = ({products}) => {
             <label className="block text-sm font-medium mb-1 ">Product</label>
             <select 
               required
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-green-900 text-white"
               value={formData.product}
               onChange={(e) => setFormData({...formData, product: e.target.value})}
             >
@@ -129,7 +129,7 @@ const EnquiryForm = ({products}) => {
               min="1"
               max="1000"
               required
-              className="w-full p-2 border rounded-md text-center"
+              className="w-full p-2 border rounded-md text-center bg-green-900 text-white"
               value={formData.quantity}
               onChange={(e) => setFormData({...formData, quantity: e.target.value})}
             />
@@ -140,7 +140,7 @@ const EnquiryForm = ({products}) => {
           <select
             required 
             disabled
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.product === 'Avocado Oil' ? 'ltrs' : 'kgs'}
           >
             <option value="ltrs">ltrs</option>
@@ -155,7 +155,7 @@ const EnquiryForm = ({products}) => {
             type="number"
             min="0"
             required
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.price}
             onChange={(e) => setFormData({...formData, price: e.target.value})}
           />
@@ -163,7 +163,7 @@ const EnquiryForm = ({products}) => {
         <div>
           <label className="block text-sm font-medium mb-1">Additional Notes</label>
           <textarea
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md bg-green-900 text-white"
             rows="4"
             value={formData.notes}
             onChange={(e) => setFormData({...formData, notes: e.target.value})}
@@ -171,7 +171,7 @@ const EnquiryForm = ({products}) => {
         </div>
         <button
           type="submit"
-          className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors"
+          className="w-full bg-green-600 text-white h-[3rem] text-sm font-semibold py-2 px-4 rounded-md hover:bg-green-700 transition-colors uppercase"
           disabled={status === 'submitting'}
         >{status === 'submitting' ?
           <div id='loading'></div> :
