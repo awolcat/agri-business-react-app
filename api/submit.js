@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         Country: ${country}
         City: ${city}
         Product: ${product}
-        Quantity: ${quantity} ${units}
+        Quantity: ${quantity} litres/kilos
         Price: $${price}
         Message: ${notes}
       `,
