@@ -87,7 +87,7 @@ const LandingPage = () => {
         <img className="h-full w-full object-cover h-128" src={heroImg} alt="Avocados" />
         <div className="absolute inset-0 bg-black opacity-30 "></div>
         <div className="absolute inset-0 flex items-center">
-          <div className="container px-4 md:mx-auto opacity-0 flex flex-col items-start gap-4 animate-fade-in-up">
+          <div className="container px-4 md:mx-auto opacity-0 flex flex-col items-start gap-4 animate-fade-in">
             <p className='underline-me text-white font-bold text-xl'>Organic & Natural</p>
             <h1 className="text-4xl md:text-5xl text-left font-bold text-green-400">
               Premium Agricultural 

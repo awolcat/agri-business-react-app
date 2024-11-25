@@ -14,7 +14,7 @@ const FailModal = ({ isOpen, onClose, message = "Something went wrong!" }) => {
   }, [isOpen]);
 
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-80 top-50">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-80 top-50 animate-fade-in">
         <div className="bg-red-50 flex flex-col gap-5 border border-red-200 p-6 rounded-lg shadow-xl max-w-sm w-full">
           <div className="flex items-center justify-center mb-4">
             <h2 className="text-red-700 font-semibold">Error</h2>

@@ -29,7 +29,7 @@ const ProductDetailModal = ({ products, isOpen, onClose, index }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 top-0 h-full"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 top-0 h-full animate-fade-in"
       onClick={onClose}
     >
       <div 
