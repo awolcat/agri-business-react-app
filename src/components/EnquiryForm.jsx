@@ -8,10 +8,11 @@ const EnquiryForm = ({products}) => {
       city: '',
       product: '',
       quantity: '',
+      units: '',
       price: '',
       email: '',
       name: '',
-      notes: ''
+      notes: '',
     });
     const [status, setStatus] = useState('idle');
     
@@ -41,10 +42,11 @@ const EnquiryForm = ({products}) => {
           city: '',
           product: '',
           quantity: '',
+          units: '',
           price: '',
           email: '',
           name: '',
-          notes: '' });
+          notes: '', });
       } catch (error) {
         setStatus('error');
       }
@@ -142,12 +144,14 @@ const EnquiryForm = ({products}) => {
           </div>
           {/*Unit*/}
         {formData.product && (<div className='w-4/12 flex-grow-0'>
-          <label className="block text-sm font-medium mb-1"></label>
+          <label htmlFor='units' className="block text-sm font-medium mb-1 sr-only">Units</label>
           <select
+            id='units'
             required 
             disabled
             className="w-full p-2 border rounded-md bg-green-900 text-white"
             value={formData.product === 'Avocado Oil' ? 'ltrs' : 'kgs'}
+            onChange={(e) => setFormData({...formData, units: e.target.value})}
           >
             <option value="ltrs">ltrs</option>
             <option value="kgs">kgs</option>

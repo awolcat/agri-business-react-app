@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, country, city, email, product, quantity, price, message } = req.body;
+    const { name, country, city, email, product, quantity, units, price, notes } = req.body;
     await resend.emails.send({
       from: 'ExtraFreshFarm <emily@extrafreshfarm.com>',
       to: [process.env.BUSINESS_EMAIL, process.env.PERSONAL_EMAIL],
@@ -21,9 +21,9 @@ export default async function handler(req, res) {
         Country: ${country}
         City: ${city}
         Product: ${product}
-        Quantity: ${quantity}
-        Price: ${price} per kg/ltr
-        Message: ${message}
+        Quantity: ${quantity} ${units}
+        Price: $${price}
+        Message: ${notes}
       `,
     });
     await resend.contacts.create({
