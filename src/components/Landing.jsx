@@ -8,6 +8,7 @@ import avocadoImage from '../assets/avocadoes.jpeg';
 import avocadoOilImage from '../assets/avocadooil.jpeg';
 import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
+import heroImg from '../assets/hero.jpeg';
 import ProductDetailModal from './ProductDetailModal';
 import TopBanner from './TopBanner';
 import BenefitsBanner from './BenefitsBanner';
@@ -83,7 +84,7 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <header className="relative mx-auto h-[34rem]">
-        <img className="h-full w-full object-cover h-128" src='src/assets/hero.jpeg' alt="Avocados" />
+        <img className="h-full w-full object-cover h-128" src={heroImg} alt="Avocados" />
         <div className="absolute inset-0 bg-black opacity-30 "></div>
         <div className="absolute inset-0 flex items-center">
           <div className="container px-4 md:mx-auto opacity-0 flex flex-col items-start gap-4 animate-fade-in-up">

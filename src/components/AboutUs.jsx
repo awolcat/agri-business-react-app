@@ -1,5 +1,6 @@
 import {CircleCheck} from 'lucide-react';
-
+import macademiaTree from '../assets/macademiatree.webp';
+import avocadoTree from '../assets/avocadoontree.webp';
 
 const AboutSection = () => (
     <section id="about" className="py-2 h-full md:h-[64rem] lg:h-[34rem] bg-white">
@@ -7,10 +8,10 @@ const AboutSection = () => (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-0 h-full justify-items-center items-center px-0">
           <div className="relative w-full md:w-5/6 h-[34rem] lg:h-full lg:justify-self-start">
             <div className='absolute h-[22rem] w-80 inset-0'>
-              <img className='object-cover object-top h-[22rem] w-80 rounded-lg' src='/src/assets/macademiatree.webp' alt='Macademia tree'/>
+              <img className='object-cover object-top h-[22rem] w-80 rounded-lg' src={macademiaTree} alt='Macademia tree'/>
             </div>
             <div className='absolute h-[22-rem] w-80 bottom-0 right-0 border-4 border-white rounded-lg'>
-              <img className='object-cover object-right h-[22rem] w-80 rounded-lg' src='/src/assets/avocadoontree.webp' alt='Avocado tree'/>
+              <img className='object-cover object-right h-[22rem] w-80 rounded-lg' src={avocadoTree} alt='Avocado tree'/>
             </div>
           </div>
           
