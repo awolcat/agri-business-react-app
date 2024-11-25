@@ -1,9 +1,10 @@
 import { ChartLine, ChevronDown } from "lucide-react";
+import heroImg from '../assets/hero.jpeg';
 
 const infoBanner = () => {
   return (
     <div className="relative mx-auto h-[20rem] md:h-[13rem]">
-        <img className="h-full w-full object-cover" src="src/assets/hero.jpeg" alt="Avocados" />
+        <img className="h-full w-full object-cover" src={heroImg} alt="Avocados" />
         <div className="absolute inset-0 bg-black opacity-50 "></div>
         <div className="absolute inset-0 flex flex-row items-center">
             <div className="container flex flex-row flex-wrap gap-8 justify-center md:justify-between mx-auto w-5/6">
