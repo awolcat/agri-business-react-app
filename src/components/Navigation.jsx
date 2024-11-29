@@ -71,8 +71,8 @@ const ProgressBar = ({ progress }) => (
   
           {/* Mobile Navigation */}
           <div className={`md:hidden transition-all duration-500 
-                          ${isMenuOpen ? 'max-h-64 opacity-100 bg-white text-green-600 shadow-md'
-                                       :'max-h-0 opacity-0'} overflow-hidden`}>
+                          ${isMenuOpen ? 'max-h-64 overflow-y-scroll opacity-100 bg-white text-green-600 shadow-md'
+                                       :'max-h-0 opacity-0'} `}>
             <div className="pb-4 space-y-2">
               {navLinks.map(link => (
                 <a
