@@ -1,13 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {
+  Route,
+  Routes,
+  BrowserRouter as Router,
+} from "react-router-dom";
+
 import './App.css'
 import LandingPage from './components/Landing'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
     <>
-      <LandingPage />
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </>
   )
 }
