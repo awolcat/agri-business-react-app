@@ -23,9 +23,8 @@ const ProductCard = ({ product, setModalOpen }) => {
             ))}
           </ul>
           <a 
-              href="#products" 
+              href={product.href} 
               className="inline-flex bg-white text-green-400 font-semibold px-4 py-1 rounded-full hover:text-green-500 transition-all duration-300 hover:scale-105"
-              onClick={() => setModalOpen(product.index) }
             >
               Learn More
               <ChevronRight className="ml-2" />
