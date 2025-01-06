@@ -1,12 +1,17 @@
 import { CircleCheck, ChevronDown } from "lucide-react";
 import EnquiryForm from "../components/EnquiryForm";
 import { products } from "../components/Landing";
+import EnquireButton from "../components/EnquireButton";
+import Hass from '../assets/hass.webp';
+import Fuerte from '../assets/fuerte.webp';
+import Reed from '../assets/reed.webp';
 
 const AvocadoPage = () => {
   const avocados = [
     {
       name: "Hass Avocado",
       badge: "Most Popular",
+      image: Hass,
       description: "Our premium Hass avocados feature a creamy, rich flesh and distinctive pebbly dark skin that turns from green to purplish-black when ripe. Perfect for guacamole and toast.",
       features: [
         "Rich, nutty flavor",
@@ -17,6 +22,7 @@ const AvocadoPage = () => {
     {
       name: "Fuerte Avocado",
       badge: "Classic Choice",
+      image: Fuerte,
       description: "Fuerte avocados are known for their smooth, green skin and subtle flavor. These pear-shaped fruits are slightly larger than Hass and maintain their green color when ripe.",
       features: [
         "Mild, creamy flavor",
@@ -27,6 +33,7 @@ const AvocadoPage = () => {
     {
       name: "Reed Avocado",
       badge: "Gourmet Selection",
+      image: Reed,
       description: "Reed avocados are large, round fruits with thick, slightly pebbled green skin. They're known for their exceptional flavor and high oil content, making them perfect for salads.",
       features: [
         "Buttery flavor",
@@ -61,7 +68,7 @@ const AvocadoPage = () => {
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <img 
-                src="/api/placeholder/400/200" 
+                src={avocado.image} 
                 alt={avocado.name}
                 className="w-full h-48 object-cover"
               />
@@ -81,16 +88,7 @@ const AvocadoPage = () => {
                 </ul>
                 
               </div>
-              <a 
-                    href="#enquiry" 
-                    className="inline-flex items-center bg-green-500 font-semibold text-white hover:text-white px-6 py-3 rounded-md hover:bg-green-600 transition-all duration-300 hover:scale-105 mb-6"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById('enquiry')?.scrollIntoView({behavior: "smooth"})}}
-              >
-                    Enquire
-                    <ChevronDown className="ml-2" />
-                </a>
+              < EnquireButton />
             </div>
           ))}
         </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Mail, Phone, MapPin} from 'lucide-react';
+import { ChevronDown} from 'lucide-react';
 import EnquiryForm from './EnquiryForm';
-import Navigation from './Navigation';
 import ProductCard from './ProductCard';
 import AboutSection from './AboutUs';
 import avocadoImage from '../assets/avocadoes.jpeg';
@@ -10,10 +9,8 @@ import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
 import heroImg from '../assets/hero.jpeg';
 import ProductDetailModal from './ProductDetailModal';
-import TopBanner from './TopBanner';
 import BenefitsBanner from './BenefitsBanner';
 import InfoBanner from './InfoBanner';
-import Footer from './Footer';
 
 // Previous products array remains the same
 export const products = [

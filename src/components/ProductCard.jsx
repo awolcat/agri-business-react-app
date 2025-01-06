@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 
 // Enhanced Product Card with hover effects
-const ProductCard = ({ product, setModalOpen }) => {
+const ProductCard = ({ product }) => {
   return (
     <div 
       className="relative  h-[24rem] w-full opacity-0 translate-y-8 animate-fade-in-up bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"

@@ -12,6 +12,7 @@ import Footer from "./components/Footer"
 import LandingPage from './components/Landing'
 import AvocadoPage from "./pages/AvocadoPage"
 import AvocadoOilPage from "./pages/AvocadoOilPage"
+import MacadamiaPage from "./pages/MacademiaPage";
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/avocadoes" element={<AvocadoPage />} />
           <Route path="/avocado-oil" element={<AvocadoOilPage />} />
+          <Route path="/macadamia-nuts" element={<MacadamiaPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

@@ -1,12 +1,16 @@
 import { CircleCheck } from "lucide-react";
 import EnquiryForm from "../components/EnquiryForm";
 import { products } from "../components/Landing";
+import EnquireButton from "../components/EnquireButton";
+import VirginOil from '../assets/virgin-avocado-oil.webp';
+import RefinedOil from '../assets/refined-avocado-oil.webp';
 
 const AvocadoOilPage = () => {
   const oils = [
     {
       name: "Extra Virgin Avocado Oil",
       badge: "Premium Grade",
+      image: VirginOil,
       description: "Cold-pressed from the finest Kenyan avocados, our Extra Virgin Avocado Oil retains all the natural nutrients and flavors. With its high smoke point and rich, buttery taste, it's perfect for both cooking and finishing dishes.",
       features: [
         "Cold-pressed extraction",
@@ -20,6 +24,7 @@ const AvocadoOilPage = () => {
     {
       name: "Refined Avocado Oil",
       badge: "All-Purpose",
+      image: RefinedOil,
       description: "Our Refined Avocado Oil undergoes careful processing to create a versatile, neutral-flavored oil that maintains its excellent nutritional benefits while being perfect for everyday cooking.",
       features: [
         "Neutral taste profile",
@@ -57,8 +62,8 @@ const AvocadoOilPage = () => {
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <img 
-                src="/api/placeholder/400/200" 
-                alt={`${oil.name} bottle`}
+                src={oil.image} 
+                alt={`${oil.name} bowl`}
                 className="w-full h-64 object-cover"
               />
               <div className="p-8">
@@ -72,7 +77,7 @@ const AvocadoOilPage = () => {
                   <h3 className="text-lg font-semibold mb-3">Key Features:</h3>
                   <ul className="space-y-2">
                     {oil.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
+                      <li key={idx} className="flex gap-2 items-center text-gray-700">
                         <CircleCheck size={16} color="#18d100" />
                         {feature}
                       </li>
@@ -85,6 +90,7 @@ const AvocadoOilPage = () => {
                   <p className="text-gray-600">{oil.usages}</p>
                 </div>
               </div>
+                <EnquireButton />
             </div>
           ))}
         </div>
