@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 
 // Enhanced Product Card with hover effects
-const ProductCard = ({ product, setModalOpen }) => {
+const ProductCard = ({ product }) => {
   return (
     <div 
       className="relative  h-[24rem] w-full opacity-0 translate-y-8 animate-fade-in-up bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
@@ -23,9 +22,8 @@ const ProductCard = ({ product, setModalOpen }) => {
             ))}
           </ul>
           <a 
-              href="#products" 
+              href={product.href} 
               className="inline-flex bg-white text-green-400 font-semibold px-4 py-1 rounded-full hover:text-green-500 transition-all duration-300 hover:scale-105"
-              onClick={() => setModalOpen(product.index) }
             >
               Learn More
               <ChevronRight className="ml-2" />

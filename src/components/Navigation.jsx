@@ -17,7 +17,7 @@ const ProgressBar = ({ progress }) => (
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     const navLinks = [
-      { href: '#home', text: 'Home' },
+      { href: '/', text: 'Home' },
       { href: '#about', text: 'About' },
       { href: '#products', text: 'Products' },
       { href: '#enquiry', text: 'Enquiry' },
@@ -36,15 +36,15 @@ const ProgressBar = ({ progress }) => (
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href="#" className="text-3xl text-slate-700">Extra Fresh Farm</a>
+            <a href="/" className="text-3xl text-slate-700">Extra Fresh Farm</a>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
               {navLinks.map(link => (
                 <a
-                  key={link.href}
+                  key={link.text}
                   href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
+                  onClick={(e) => link.text !== "Home" ? scrollToSection(e, link.href) : null}
                   className="hover:text-green-400 transition-colors"
                 >
                   {link.text}

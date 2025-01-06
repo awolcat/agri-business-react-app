@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Mail, Phone, MapPin} from 'lucide-react';
+import { ChevronDown} from 'lucide-react';
 import EnquiryForm from './EnquiryForm';
-import Navigation from './Navigation';
 import ProductCard from './ProductCard';
 import AboutSection from './AboutUs';
 import avocadoImage from '../assets/avocadoes.jpeg';
@@ -10,18 +9,17 @@ import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
 import heroImg from '../assets/hero.jpeg';
 import ProductDetailModal from './ProductDetailModal';
-import TopBanner from './TopBanner';
 import BenefitsBanner from './BenefitsBanner';
 import InfoBanner from './InfoBanner';
-import Footer from './Footer';
 
 // Previous products array remains the same
-const products = [
+export const products = [
   {
     name: 'Fresh Avocados',
     varieties: ['Hass', 'Fuerte', 'Reed'],
     packaging: ['4kg Box', '10kg Box', 'Bulk Order'],
     image: avocadoImage,
+    href: '/avocadoes',
     varietyImage: avocadoVarietyImage,
     index: 0
   },
@@ -30,6 +28,7 @@ const products = [
     varieties: ['Extra Virgin', 'Refined'],
     packaging: ['250ml Bottle', '500ml Bottle', '1L Bottle', 'Bulk Order'],
     image: avocadoOilImage,
+    href: '/avocado-oil',
     index: 1
   },
   {
@@ -37,6 +36,7 @@ const products = [
     varieties: ['Raw', 'Roasted', 'Salted'],
     packaging: ['250g Pack', '500g Pack', '1kg Pack', 'Bulk Order'],
     image: macademiaImage,
+    href: '/macadamia-nuts',
     index: 2
   }
 ];
@@ -78,9 +78,6 @@ const LandingPage = () => {
   return (
     <>
     <div id="home" className="min-h-screen bg-gray-50">
-      <TopBanner />
-      <Navigation isScrolled={isScrolled} scrollProgress={scrollProgress} />
-      {/*<ProgressBar progress={scrollProgress} />*/}
 
       {/* Hero Section */}
       <header className="relative mx-auto h-[34rem]">
@@ -148,17 +145,8 @@ const LandingPage = () => {
       <InfoBanner />
 
       {/* Enquiry Form */}
-      <section id="enquiry" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center opacity-0 animate-fade-in-up">Make an Enquiry</h2>
-          <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            <EnquiryForm products={products}/>
-          </div>
-        </div>
-      </section>
+      <EnquiryForm products={products}/>
 
-      {/* Footer */}
-      <Footer />
     </div>
     </>
   );
