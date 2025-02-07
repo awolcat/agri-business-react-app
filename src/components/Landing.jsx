@@ -43,16 +43,6 @@ export const products = [
 
 const LandingPage = () => {
   
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentProductIndex, setCurrentProductIndex] = useState(0);
-
-  const openModal = (index) => {
-    setCurrentProductIndex(index);
-    setIsModalOpen(true);
-  };
-
-  
-
   return (
     <>
     <div id="home" className="min-h-screen bg-gray-50">
@@ -93,13 +83,7 @@ const LandingPage = () => {
       <AboutSection />
       
       {/* Products */}
-      <ProductDetailModal
-            key={currentProductIndex}
-            products={products} 
-            isOpen={isModalOpen} 
-            onClose={() => setIsModalOpen(false)}
-            index={currentProductIndex} 
-      />
+      
       <section id="products" className="py-16 h-[96rem] md:h-full bg-gray-50 animate-fade-in-up">
         <div className="container mx-auto flex flex-col h-full items-center px-4">
           
