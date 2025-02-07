@@ -63,11 +63,11 @@ const EnquiryForm = ({products}) => {
         <FailModal isOpen={true}
                    onClose={() => setStatus('idle')} />
       )}
-      
+
       <section id="enquiry" className="py-16 bg-white">
               <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-8 text-center opacity-0 animate-fade-in-up">Make an Enquiry</h2>
-                <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}></div>
+                
                 <form onSubmit={handleSubmit} id="enquiry-form" className="max-w-lg mx-auto space-y-4 text-left">
                   <div className='flex flex-row flex-wrap justify-between'>
                     <div className='w-5/12'>
