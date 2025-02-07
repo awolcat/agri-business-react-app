@@ -42,39 +42,7 @@ export const products = [
 ];
 
 const LandingPage = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentProductIndex, setCurrentProductIndex] = useState(0);
-
-  const openModal = (index) => {
-    setCurrentProductIndex(index);
-    setIsModalOpen(true);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Calculate scroll progress
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight - windowHeight;
-      const scrolled = window.scrollY;
-      const progress = (scrolled / documentHeight) * 100;
-      setScrollProgress(progress);
-
-      // Update nav background
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (e, href) => {
-    e.preventDefault();
-    const element = document.querySelector(href);
-    element.scrollIntoView({ behavior: 'smooth' });
-  };
-
+  
   return (
     <>
     <div id="home" className="min-h-screen bg-gray-50">
@@ -115,13 +83,7 @@ const LandingPage = () => {
       <AboutSection />
       
       {/* Products */}
-      <ProductDetailModal
-            key={currentProductIndex}
-            products={products} 
-            isOpen={isModalOpen} 
-            onClose={() => setIsModalOpen(false)}
-            index={currentProductIndex} 
-      />
+      
       <section id="products" className="py-16 h-[96rem] md:h-full bg-gray-50 animate-fade-in-up">
         <div className="container mx-auto flex flex-col h-full items-center px-4">
           
