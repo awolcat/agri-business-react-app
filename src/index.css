@@ -17,29 +17,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  
-  
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-
-  ::-webkit-scrollbar-track {
-    border-radius: 50px;
-    background: #7a7979;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #2fe01f;
-    border-radius: 100vh;
-    border: 3px solid #2fe01f;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #2fe01f;
-  }
-}
 
 
 button:hover {

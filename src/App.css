@@ -28,7 +28,11 @@ input, select, textarea {
   background-color: white;
 }
 
-
+@media (hover: none) and (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 #loading {
   display: inline-block;
