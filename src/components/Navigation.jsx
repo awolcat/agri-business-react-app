@@ -1,19 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, PhoneCall } from 'lucide-react';
-
-// Progress Bar component
-const ProgressBar = ({ progress }) => (
-    <div className="h-1 bg-gray-200">
-      <div 
-        className="h-full bg-green-600 transition-all duration-200"
-        style={{ width: `${progress}%` }}
-      />
-    </div>
-  );
-  
   
   // Navigation component
-  const Navigation = ({ isScrolled, scrollProgress }) => {
+  const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
     const navLinks = [
@@ -70,10 +59,9 @@ const ProgressBar = ({ progress }) => (
           </div>
   
           {/* Mobile Navigation */}
-          <div className={`md:hidden transition-all duration-500 
-                          ${isMenuOpen ? 'max-h-64 overflow-y-scroll opacity-100 bg-white text-green-600 shadow-md'
-                                       :'max-h-0 opacity-0'} `}>
-            <div className="pb-4 space-y-2">
+          <div className={`transition-all duration-500`}>
+            <div className={`${isMenuOpen ? 'pb-4 space-y-2 visible max-h-64 overflow-y-scroll opacity-100 bg-white text-green-600 shadow-md'
+                            :'hidden max-h-0 opacity-0'} `}>
               {navLinks.map(link => (
                 <a
                   key={link.href}

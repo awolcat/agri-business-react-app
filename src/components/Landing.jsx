@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronDown} from 'lucide-react';
 import EnquiryForm from './EnquiryForm';
 import ProductCard from './ProductCard';
@@ -8,7 +8,6 @@ import avocadoOilImage from '../assets/avocadooil.jpeg';
 import macademiaImage from '../assets/macademia.jpeg';
 import avocadoVarietyImage from '../assets/avocadovariety.jpeg';
 import heroImg from '../assets/hero.jpeg';
-import ProductDetailModal from './ProductDetailModal';
 import BenefitsBanner from './BenefitsBanner';
 import InfoBanner from './InfoBanner';
 
