@@ -127,6 +127,10 @@ const Footer = () => {
             </div>
         </div>
         <div className="bg-stone-900 py-8 text-center">
+          <p className="text-xs font-semibold mb-2">Website by <span className='text-green-500 hover:underline'>
+                <a href='https://www.webweaversonline.com'>Web Weavers</a>
+            </span>
+           </p>  
           <p className="text-xs font-semibold">Copyright &copy; 2024 Extra Fresh Farm. All rights reserved.</p>
         </div>
       </footer>
